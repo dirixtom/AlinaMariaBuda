@@ -1,0 +1,20 @@
+// Screen sizes
+$xs: "30em" //480
+$s: "48em" //768
+$m: "62em" //992
+$l: "90em" //1440
+$xxl: "124.5em" //1992
+    
+@mixin mq($breakpoint)
+    @if ($breakpoint==tablet)
+        @media only screen and (max-width: $m)
+            @content
+    @elseif ($breakpoint==mobile)
+        @media only screen and (max-width: $s)
+            @content
+    @elseif ($breakpoint==huge) 
+        @media only screen and (min-width: $xxl)
+            @content
+    @elseif ($breakpoint==notmobile) 
+        @media only screen and (min-width: $xs)
+            @content

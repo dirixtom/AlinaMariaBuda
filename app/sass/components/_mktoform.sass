@@ -1,0 +1,283 @@
+$input-radius: 5px
+$border: 1px solid #EFEEF3
+    
+.mktoForm
+    width: 100% !important
+
+    .mktoFormRow
+        width: 100%
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+        .mktoFormCol
+            flex: 1 1
+
+            & + .mktoFormCol
+                margin-left: 20px  
+            
+    input
+        font-family: $font-style
+
+        &[type=text],
+        &[type=url],
+        &[type=tel],
+        &[type=number],
+        &[type=date],
+        &[type=email]
+            width: 100% !important
+            padding: 10px !important
+            height: 37px !important
+            font-family: $font-style
+            font-size: $p
+            border-radius: $input-radius
+            border: $border !important
+            outline: none !important
+
+            &:focus
+                width: 100% !important
+                border-color: $secondary !important
+                border-width: 2px !important
+
+        &[type=radio]
+            width: auto !important
+            background-color: none !important
+
+        &[type=checkbox] 
+            width: auto !important
+            background-color: none !important
+
+    .mktoFieldWrap
+        width: 100%
+
+        select 
+            padding: 8px 10px !important
+            width: 100% !important
+            height: 40px !important
+            border-radius: $input-radius
+            border: $border !important
+            appearance: none
+            position: relative
+            box-sizing: border-box
+            border: $border
+            background-color: #ffffff !important
+            color: $font
+            cursor: pointer
+            border-radius: $input-radius !important
+            text-shadow: none
+            box-shadow: none
+            font-family: $font-style
+            font-size: $p
+            background: url(https://go.lectra.com/rs/448-ANF-726/images/select_icon%402x.png) no-repeat right
+            background-position: right 10px center
+            background-size: 16px
+            outline: none !important
+
+            &:focus
+                width: 100% !important
+                border-color: $secondary !important
+                border-width: 2px !important
+
+        textarea
+            padding: 10px !important
+            width: 100% !important
+            height: 90px !important
+            font-family: $font-style
+            font-size: $p
+            border-radius: $input-radius
+            border: $border !important
+            outline: none !important
+
+            &:focus
+                width: 100% !important
+                border-color: $secondary !important
+                border-width: 2px !important
+
+        label
+            width: auto !important
+    
+        .mktoInvalid
+            border-color: $primary !important
+            border-width: 2px !important
+
+            &:focus
+                border-color: $primary !important
+
+    .mktoAsterix 
+        float: right !important
+        padding-left: 5px !important
+        padding-right: 5px !important
+        color: $grey !important
+
+    [type=checkbox],
+    [type=radio]
+        &:not(:checked),
+        &:checked
+            position: absolute
+            left: -9999px  
+
+            + label
+                position: relative
+                padding-left: 25px
+                cursor: pointer
+
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 2px
+                    width: 17px
+                    height: 17px
+                    border: $border
+                    background: transparent
+                    border-radius: 0px
+                    box-shadow: none
+
+                &::after
+                    content: ''
+                    position: absolute
+                    width: 11px
+                    height: 11px
+                    top: 6px
+                    left: 4px
+                    font-size: $p
+                    background-color: $primary
+                    transition: all .2s
+
+    [type=checkbox],
+    [type=radio]
+        &:checked
+            + label
+                &::after
+                    opacity: 1
+                    transform: scale(1)
+    [type=checkbox],
+    [type=radio]
+        &:not(:checked),
+            + label
+                &::after
+                    opacity: 0
+                    transform: scale(0)
+        
+    [type=radio]
+        &:not(:checked),
+        &:checked
+            + label
+                &::before
+                    border-radius: 50%
+
+                &::after
+                    border-radius: 50%
+
+    label 
+        color: $grey !important
+        padding-bottom: 5px !important
+        padding-top: 3px !important
+        font-size: 14px
+        font-family: $bold-style
+        text-transform: uppercase
+
+    .mktoRadioList,
+    .mktoCheckboxList 
+        width: 100% !important
+
+        > label
+            margin-left: 0px !important
+
+        label
+            color: $font !important
+            font-family: $font-style
+            text-transform: none
+
+    .mktoButtonWrap,
+    .mktoButtonRow 
+        margin-left: 0px !important
+        width: 100% !important
+
+    .mktoHtmlText,
+    .mktoHasWidth
+        width: 100% !important
+
+    .mktoHtmlText
+        font-family: $font-style
+        color: #414042
+        font-size: 16px
+        line-height: 22px
+    
+    .mktoForm
+        &.mktoLayoutAbove 
+            .mktoLabel 
+                width: auto !important
+        
+    .mktoOffset,
+    .mktoGutter 
+        display: none !important
+
+.simple
+    .mktoFieldWrap
+        input
+            font-family: $font-style
+            
+            &[type=text],
+            &[type=url],
+            &[type=tel],
+            &[type=number],
+            &[type=date],
+            &[type=email]
+                border-radius: 0 !important
+                border-top: 0 !important
+                border-left: 0 !important
+                border-right: 0 !important
+                padding-left: 0 !important
+
+        select 
+            height: 37px !important
+            border-radius: 0 !important
+            border-top: 0 !important
+            border-left: 0 !important
+            border-right: 0 !important
+            padding-left: 0 !important
+            padding-left: 0 !important
+
+        textarea
+            border-radius: 0 !important
+            border-top: 0 !important
+            border-left: 0 !important
+            border-right: 0 !important
+            padding-left: 0 !important
+
+            &:focus
+                width: 100% !important
+
+.label-left
+    .mktoFieldWrap
+        input
+            &[type=text],
+            &[type=url],
+            &[type=tel],
+            &[type=number],
+            &[type=date],
+            &[type=email]
+                width: calc(100% - 130px) !important
+
+                &:focus
+                    width: calc(100% - 130px) !important
+
+        select
+            width: calc(100% - 130px) !important
+
+            &:focus
+                width: calc(100% - 130px) !important
+
+        textarea
+            width: calc(100% - 130px) !important
+
+            &:focus
+                width: calc(100% - 130px) !important
+
+        > label
+            width: 120px !important
+
+    .mktoCheckboxList,
+    .mktoRadioList
+        width: calc(100% - 130px) !important
